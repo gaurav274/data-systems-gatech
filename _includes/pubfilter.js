@@ -7,9 +7,24 @@
   var data = [];
   var allYears = new Set();
 
+
+  function removeAsteriskFromNames(names) {
+    return names.map(name => {
+        if (name.endsWith('*')) {
+            return name.slice(0, -1); // Remove the last character
+        } else {
+            return name; // Return the name unchanged if it doesn't end with "*"
+        }
+    });
+  }
+
   pubElems.forEach(function(element) {
     var item = JSON.parse(element.getAttribute("data-pub"));
+    console.log("In pubfilter", item.authors);
 
+    // clean author names 
+    item.authors = removeAsteriskFromNames(item.authors);
+    
     allYears.add(item.year);
 
     item.element = element;
