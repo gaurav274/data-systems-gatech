@@ -15,8 +15,21 @@ roles:
 
 <h2>Current Members</h2>
 
-<div class="flex flex-wrap">
   {% for role in page.roles %}
+
+  <!-- if any role dpes not exist in site.people then do not print role as heading -->
+  {% assign role_exists = false %}
+  {% for person in site.people %}
+    {% if person.role == role %}
+      {% assign role_exists = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if role_exists %}
+    <h3>{{ role }}s</h3>
+  {% endif %}
+
+  <div class="flex flex-wrap">
     {% for person in site.people %}
       {% if person.role == role %}
         {% unless person.alumni_since %}
@@ -29,10 +42,10 @@ roles:
                 </span>
               </span>
               {% if person.website %}</a>{% endif %}
-              <div class="gray">({{ person.role }})</div>
               {% if person.advisors %}
               <!-- check if advisors exist -->
-                Advised by:
+              <br>
+              Advised by:
                 <!-- loop through advisors -->
                 {% for advisor in person.advisors %}
                   <div class="black"> - {{ advisor }}</div>
@@ -42,8 +55,8 @@ roles:
         {% endunless %}
       {% endif %}
     {% endfor %}
+  </div>
   {% endfor %}
-</div>
 
 <h2>Past Members</h2>
 
