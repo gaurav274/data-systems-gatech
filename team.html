@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Team
-subtitle: People define this group. If you are a current student at CMU, you can apply to the lab via <a href="https://forms.gle/6tHMesK3Yv8tkYtv5">this form</a>. If you are interested in a PhD with us, <a href="https://dig.cmu.edu/2020/10/03/join-us.html">please apply to CMU</a>.
+subtitle: If you are a current student at Georgia Tech, you can apply to the lab via <a href="/">this form (TODO)</a>. If you are interested in a PhD with us, <a href="https://www.cc.gatech.edu/degree-programs/phd-computer-science">please apply to GT 🐝</a>.
 roles:
   - Professor
   - PhD Student
@@ -23,14 +23,22 @@ roles:
           <div class="w-25-m w-20-l w-50 ph2 pv2">
             {% if person.website %}<a href="{{ person.website }}">{% endif %}
               <span{% if person.content %} title="Fun fact: {{ person.content }}"{% endif %}>
-                <img src="{{ person.image | relative_url }}" alt="Picture of {{ person.name }}" loading="lazy" class="br3" />
+                  <img src="{{ person.image | relative_url }}" alt="Picture of {{ person.name }}" loading="lazy" class="br3" />
                 <span class="black">
                   {{ person.name }}
                 </span>
               </span>
               {% if person.website %}</a>{% endif %}
-            <div class="gray">({{ person.role }})</div>
-          </div>
+              <div class="gray">({{ person.role }})</div>
+              {% if person.advisors %}
+              <!-- check if advisors exist -->
+                Advised by:
+                <!-- loop through advisors -->
+                {% for advisor in person.advisors %}
+                  <div class="black"> - {{ advisor }}</div>
+                {% endfor %}
+              {% endif %}
+            </div>
         {% endunless %}
       {% endif %}
     {% endfor %}
@@ -61,4 +69,4 @@ roles:
   </div> 
 </div>
 
-You can find instructions for editing this list <a href="https://github.com/cmudig/cmudig.github.io/tree/main/_people#adding-a-person">in the repository for this website</a>.
+You can find instructions for editing this list <a href="people/README.md">in the repository for this website</a>.
