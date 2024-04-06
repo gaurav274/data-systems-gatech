@@ -43,5 +43,9 @@ docker ps
 # Below will commit the state of your container into a new image 
 docker commit <container id> <gt_username>/data-systems-gatech
 # Run below to preview the site on 127.0.0.1:4000 in your browser
-docker run --volume="$PWD:/srv/jekyll" -p 127.0.0.1:4000:4000 -p 127.0.0.1:35729:35729 -it <gt_username>/data-systems-gatech jekyll serve --livereload
+docker run --volume="$PWD:/srv/jekyll" \
+ -p 127.0.0.1:4000:4000 \
+ -p 127.0.0.1:35729:35729 \
+ -it <gt_username>/data-systems-gatech \
+ jekyll serve --livereload
 ```
