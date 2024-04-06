@@ -44,8 +44,8 @@ roles:
               {% if person.website %}</a>{% endif %}
               {% if person.advisors %}
               <!-- check if advisors exist -->
-                Advised by:
-                <br>
+              <br>
+              Advised by:
                 <!-- loop through advisors -->
                 {% for advisor in person.advisors %}
                   <div class="black"> - {{ advisor }}</div>
