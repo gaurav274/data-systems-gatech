@@ -29,8 +29,13 @@ roles:
                 </span>
               </span>
               {% if person.website %}</a>{% endif %}
-            <div class="gray">({{ person.role }})</div>
-          </div>
+              <div class="gray">({{ person.role }})</div>
+              <!-- loop through advisors -->
+              Advised by:
+              {% for advisor in person.advisors %}
+                <div class="black"> - {{ advisor }}</div>
+              {% endfor %}
+            </div>
         {% endunless %}
       {% endif %}
     {% endfor %}
