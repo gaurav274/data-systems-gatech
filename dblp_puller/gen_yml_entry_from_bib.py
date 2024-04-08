@@ -1,5 +1,5 @@
 import pandas as pd
-
+import re
 # read the csv file
 df = pd.read_csv('prof_to_bib_entries.csv')
 
@@ -32,12 +32,31 @@ def write_to_file(name, bibentry: dict):
         "2018-journals-tsc-ZhangYPA18",
         "2019-journals-jsjkx-ZhangLW19",
         "2023-journals-toit-SrivastavaLPZ23"]
-    if f"{year}-{key}" not in ignore:
-        return
+    # if f"{year}-{key}" in ignore:
+    #     return
     
     if "CORR" in venue:
         return
+    
+    if "Editor's Notes" in title:
+        return
+
+    # remove the special characters from the title that are not allowed in yaml strings
+    def remove_special_characters(text):
+        # Define a regex pattern to match special characters not allowed in YAML strings
+        pattern = r'[^\w\s\-.,:;!?%&()\'"<>#@$*+=|\\\/]'
+        # Replace matched characters with an empty string
+        clean_text = re.sub(pattern, '', text)
         
+        # remove extra quotes from the title
+        clean_text = clean_text.replace('"', '')
+        # remove backslash from the title
+        clean_text = clean_text.replace('\\', '')
+        
+        return clean_text
+    
+    title = remove_special_characters(title)    
+    
     
     f = open(f'ymls_generated/{year}-{key}.html', 'a')
     f.write(f'---\n')
