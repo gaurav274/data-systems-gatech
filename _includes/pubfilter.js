@@ -6,7 +6,7 @@
 
   var data = [];
   var allYears = new Set();
-
+  // var gt_authors = p l
 
   function removeAsteriskFromNames(names) {
     return names.map(name => {
@@ -37,10 +37,7 @@
         size: 5
       },
       authors: {
-        size: 6,
-        include: function(item) {
-          return people.find(person => person.name === item.name) !== undefined;
-        }
+        size: 6
       },
       awards: {
         size: 5
@@ -179,9 +176,18 @@
   }
 
   function search(query) {
+    
     console.time("Search");
+    console.log(engine);
 
-    var result = engine.search(Object.assign({ per_page: data.length }, query));
+    var result = engine.search(Object.assign({ per_page: data.length}, query));
+
+    // var result = engine.search(Object.assign({ per_page: data.length,  
+    //   filter: function(item) {
+    //     console.log(item);
+    //   return people.find(person => person.name === "hh") !== undefined;
+    // }}, query));
+
 
     setAggs(result.data.aggregations);
 
