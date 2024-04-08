@@ -1,5 +1,5 @@
 ---
-name: Shamkant Navathe
+name: Shamkant B. Navathe
 website: https://faculty.cc.gatech.edu/~sham/
 image: assets/people/shamkant-navathe.png
 role: Professor
