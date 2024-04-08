@@ -12,7 +12,7 @@ def write_to_file(name, bibentry: dict):
     elif pub_type == 'conf':
         pub_type = 'Conference'
     elif pub_type == 'phd':
-        pub_type = 'Thesis'
+        return
     elif pub_type == 'books':
         pub_type = 'Book'
     elif pub_type == 'series':
