@@ -15,6 +15,8 @@ advisors:
 Fun fact.
 ```
 
+## Note: The name on paper and the `name` in the key above should match to be listed in `publications.html`
+
 We have the following roles: `Professor`, `Postdoc`, `PhD Student`, `Visiting PhD Student`, `Masters Student`, `Undergraduate Student`, and `Collaborator`. You can also add a new role if it makes sense.
 
 Add a picture, add it to [the assets directory](../assets/people) with around `400x400` pixels as a JPEG image.  The height and width of the image should be equal, so it is a square.
