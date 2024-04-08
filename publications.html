@@ -166,5 +166,10 @@ description: Recent publications from the Data Systems and Analytics Group.
 
 <script>
   {% include itemsjs.min.js %}
+
+  // create a variable with site.people and their attributes
+  // this variable will become accessible in pubfilter.js
+  var people = {{ site.people | jsonify }};
+
   {% include pubfilter.js %}
 </script>
