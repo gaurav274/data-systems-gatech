@@ -20,7 +20,6 @@
 
   pubElems.forEach(function(element) {
     var item = JSON.parse(element.getAttribute("data-pub"));
-    console.log("In pubfilter", item.authors);
 
     // clean author names 
     item.authors = removeAsteriskFromNames(item.authors);
@@ -96,6 +95,16 @@
         );
 
         buckets.forEach(function(bucket) {
+          // bucket.key is the name of an author if id is "authors"
+          // given the name of the author, check if the author is a professor in the people array
+          // if not then don't show the author
+          if (id === "authors") {
+            if (people.find(person => person.name === bucket.key) === undefined) {
+              console.log("Author not found: " + bucket.key);
+              return;
+            }
+          }
+
           var child = document.createElement("li");
           child.classList.add("mb2", "pointer");
 
