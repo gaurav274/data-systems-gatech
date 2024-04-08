@@ -37,7 +37,10 @@
         size: 5
       },
       authors: {
-        size: 6
+        size: 6,
+        include: function(item) {
+          return people.find(person => person.name === item.name) !== undefined;
+        }
       },
       awards: {
         size: 5
