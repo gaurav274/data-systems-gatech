@@ -58,7 +58,7 @@ def write_to_file(name, bibentry: dict):
     title = remove_special_characters(title)    
     
     
-    f = open(f'ymls_generated/{year}-{key}.html', 'a')
+    f = open(f'ymls_generated/{year}-{key}.html', 'w')
     f.write(f'---\n')
     f.write(f'layout: publication\n')
     # write the year
