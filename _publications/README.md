@@ -33,6 +33,8 @@ link: https://...
 pdf: ...
 recording: ...
 slides: ...
+pub_thumbnail_image: ...
+pub_teaser_image: ...
 ---
 Abstract
 ```
@@ -41,8 +43,8 @@ Only the properties in the first block are required. The rest is optional but en
 
 ## Add a teaser and thumbnail image
 
-Add a teaser and thumbnail image to `assets/publications/` in png format. It's important that we keep download sizes small. Please use https://tinypng.com/ to reduce the file sizes af all images.
+Add a teaser and thumbnail image to `assets/publications/` in png format. It's important that we keep download sizes small. Please use https://tinypng.com/ to reduce the file sizes for all images.
 
-The teaser image should be at least 1920 pixels wide and wider than tall. Name your teaser image `KEY.png`.
+The teaser image should be at least 1920 pixels wide and wider than tall.
 
-The thumbnail may have any aspect ratio but should be recognizable when shown as a small image. The thumbnail should be at least 600 pixels wide or tall. Name your thumbnail `KEY_thumb.png`. You can programmatically achieve this with `mogrify -resize 600x600^ *_thumb.png`.
+The thumbnail may have any aspect ratio but should be recognizable when shown as a small image. The thumbnail should be at least 600 pixels wide or tall. Name your thumbnail `<whatever name you want>_thumb.png`. You can programmatically achieve this with `mogrify -resize 600x600^ *_thumb.png`.
