@@ -3,7 +3,7 @@
 ## How to use this code
 
 ```bash
-conda create -n dblp pytohn=3.12 -y
+conda create -n dblp python=3.12 -y
 conda activate dblp
 pip install -r requirements.txt
 # below will produce `prof_to_bib_entries.csv` file
