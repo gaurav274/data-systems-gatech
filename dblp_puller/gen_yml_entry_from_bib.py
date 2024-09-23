@@ -68,6 +68,9 @@ def write_to_file(name, bibentry: dict):
     # write the authors
     f.write(f'authors:\n')
     for author in bibentry['author'].split(','):
+        # if '{' or '}' in author, remove it
+        author = author.replace('{', '')
+        author = author.replace('}', '')
         f.write(f'  - {author}\n')
     # write the venue_tag
     f.write(f'venue_tags:\n')
