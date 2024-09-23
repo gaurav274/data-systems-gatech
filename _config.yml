@@ -37,3 +37,7 @@ plugins:
   - jekyll-redirect-from
 kramdown:
   toc_levels: 1..2
+
+# exclude news.html
+exclude:
+  - news.html
