@@ -1,52 +1,10 @@
 ---
 layout: page
-title: About DIG
-subtitle: Learn more about the Data Interaction Group at Carnegie Mellon University.
-description: Learn more about the Data Interaction Group at Carnegie Mellon University.
+title: About DSA group @ GT
+subtitle: Learn more about the Data Systems and Analytics Group (DSA) at the Georgia Institute of Technology.
+description: Learn more about the Data Systems and Analytics Group (DSA) at the Georgia Institute of Technology.
 ---
 
-## What Motivates Us
+We live in an era of unprecedented access to data. Our group tackles new challenges in organizing and leveraging the vast amounts of information at our disposal using data management and machine learning techniques. We participate in a number of cross-disciplinary research efforts, and closely collaborate with other groups at Georgia Tech.
 
-We are passionate about helping people make sense of data. Data permeates many
-aspects of our lives today. Data scientists analyze data to provide
-information for data-driven decisions or scientific discoveries. Informed
-citizens use data to keep their representatives accountable. Machine learning
-engineers use data to train models that help us take better pictures, suggest
-people we may want to follow, or decides whether we get a loan. In our group,
-we want to use our expertise in system building and design to help everyone
-uncover insights in data and understand how data is used to make decisions
-that affect their lives.
-
-## History
-
-Adam Perer and Dominik Moritz started our group in 2019 at the Human-Computer
-Interaction Institute at Carnegie Mellon University.
-
-## Logo
-
-The DIG logo is the [CMU macot Scotty](https://athletics.cmu.edu/athletics/mascot/index) digging.
-
-## Our Values
-
-**People matter.** Teams are more successful when everybody is
-happy. We are all human and strive for an inclusive environment. We care about
-work-life balance. We celebrate successes and learn from failures.
-
-**Simple but not easy.** We strive to find simple solutions and
-principles to solve complex problem. Finding simple solutions doesn't mean
-it's easy but it means that the end result is usable and clearly communicated.
-
-**Execution matters.** There are a lot of good ideas but a good
-idea only becomes a successful idea when it is well-executed and clearly
-communicated. We care about meaningful impact.
-
-**Pragmatism over dogmatism.** Break rules when you have to and
-adjust your principles when it doesn't match reality.
-
-**We don't live in a bubble.** Scientists can't be in a bubble.
-We have to care about the societal, ecological, and economical impact of our
-work. We have to help fight discrimination, climate change, and poverty.
-
-**Process integrity over outcome achievement.** We care about doing things right
-and upholding our values. Success comes in many different forms and is
-influenced by factors we do not control.
+The database group was the first research facility at Georgia Tech to be ranked by U.S. News & World Report in the 1990s. Our graduates have taken up faculty positions at top-ranked programs, including Rice, Texas A&M, and UIC. Our collaborators include IBM Almaden, HP Labs, Microsoft Research, and ATT. Our sponsors include NSF, NIH, DARPA, CDC, Intel, and IBM.
