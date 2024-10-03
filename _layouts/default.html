@@ -5,19 +5,19 @@
     <div class="wrapper">
       <header class="bg-white">
         <div
-          class="w-100 mw8 ph4-l ph3 center pt2 pb3 flex items-baseline flex flex-wrap"
+          class="w-100 mw8 ph4-l ph3 center pt3 pb2 flex items-baseline flex flex-wrap"
         >
-          <a href="/" class="dib f2 f3-ns fw6 link black hover-gt-blue center-s" style="width: 15%; height: 95%;">
-          <img
-            alt="GT logo"
-            style="width: 100%; height: 60%;"
-            src="{{ '/assets/logo-light.png' | relative_url }}"
-          />
-          </a>
           <nav
             class="ml-auto-ns lh-copy w-auto-ns w-100 flex flex-column flex-row-ns f4 f5-ns"
           >
-            <div class="tc mt0-ns">
+          <a href="/" class="dib f2 f3-ns fw6 link black hover-gt-blue center-s" style="width: 15%; height: 95%;">
+            <img
+              alt="GT logo"
+              style="width: 100%; height: 60%;"
+              src="{{ '/assets/logo-light.png' | relative_url }}"
+            />
+            </a>
+            <div class="tc mt0-ns pt3" style="margin-left: auto;">
               <a
                 class="ml4-l ml3-m pa0-ns ph2 pv1 b black hover-gt-blue link dib"
                 href="{{ '/about' | relative_url }}"
@@ -33,18 +33,16 @@
                 href="{{ '/publications' | relative_url }}"
                 >Publications</a
               >
+              <a
+              class="ml4-l ml3-m pa0-ns ph2 pv1 b black hover-gt-blue link dib"
+              href="https://github.com/georgia-tech-db/"
+              ><i class="fab fa-github mr2"></i>GitHub</a
+            >
               <!-- <a
                 class="ml4-l ml3-m pa0-ns ph2 pv1 b black hover-gt-blue link dib"
                 href="{{ '/news' | relative_url }}"
                 >News</a
               > -->
-            </div>
-            <div class="tc ml3-m ml4-l">
-              <a
-                class="ml4-l ml3-m pa0-ns ph2 pv1 b black hover-gt-blue link dib"
-                href="https://github.com/georgia-tech-db/"
-                ><i class="fab fa-github mr2"></i>GitHub</a
-              >
             </div>
           </nav>
         </div>
