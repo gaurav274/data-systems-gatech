@@ -3,16 +3,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: CMU Data Interaction Group
-email: dig@cmu.edu
+title: GT Data Systems and Analytics group 
+email: rr@gatech.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  We are a research group at the Human-Computer Interaction Institute at 
-  Carnegie Mellon University. Our mission is to empower everyone to analyze and 
-  communicate data with interactive systems.
+  Data Systems and Analytics (DSA) is a research group at the School of Computer Science at Georgia Tech. We are interested in building systems and tools to help democratize data science and machine learning.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dig.cmu.edu" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: cmudig
-github_username: cmudig
+url: "https://dig.cmu.edu" # TODO for us GT folks the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: # none yet
+github_username: georgia-tech-db
 
 sass:
   style: compressed
