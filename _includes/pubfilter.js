@@ -125,7 +125,7 @@
           child.append(barFull);
 
           var bar = document.createElement("div");
-          bar.classList.add("bb", "b--cmu-red", "bw1");
+          bar.classList.add("bb", "b--gt-blue", "bw1");
           bar.style.marginBottom = "-.125rem";
           bar.style.width = "" + (bucket.doc_count / maxDocCount) * 100 + "%";
           barFull.append(bar);

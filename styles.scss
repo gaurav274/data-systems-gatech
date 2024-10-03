@@ -29,43 +29,40 @@ body {
 }
 
 :root {
-  --cmu-red: #a60;
-  --cmu-gray: #e0e0e0;
-  --cmu-dark-gray: #666;
+  --gt-blue: #003057;
+  --gt-gray: #D6DBD4;
+  --gt-dark-gray: #54585A;
 
-  --cmu-gold: #a60;
-  --cmu-teal: #067;
-  --cmu-blue: #247;
-  --cmu-green: #085;
-  --cmu-dark-green: #243;
+  --gt-gold: #B3A369;
+  --gt-teal: #008C95;
 
-  --pink: #faa;
+  --orange-red: #E04F39;
 
   --text-color: #000;
 }
 
-.cmu-red {
-  color: var(--cmu-red);
+.gt-blue {
+  color: var(--gt-blue);
 }
-.cmu-dark-gray {
-  color: var(--cmu-dark-gray);
+.gt-dark-gray {
+  color: var(--gt-dark-gray);
 }
-.cmu-gray {
-  color: var(--cmu-gray);
+.gt-gray {
+  color: var(--gt-gray);
 }
-.hover-cmu-red:hover {
-  color: var(--cmu-red);
-}
-
-.bg-cmu-dark-gray {
-  background-color: var(--cmu-dark-gray);
-}
-.bg-cmu-gray {
-  background-color: var(--cmu-gray);
+.hover-gt-blue:hover {
+  color: var(--gt-blue);
 }
 
-.b--cmu-red {
-  border-color: var(--cmu-red);
+.bg-gt-dark-gray {
+  background-color: var(--gt-dark-gray);
+}
+.bg-gt-gray {
+  background-color: var(--gt-gray);
+}
+
+.b--gt-blue {
+  border-color: var(--gt-blue);
 }
 
 h1,
@@ -74,11 +71,11 @@ h3,
 h4,
 h5,
 h6 {
-  @extend .cmu-dark-gray, .mt4, .mb3, .lh-title;
+  @extend .gt-dark-gray, .mt4, .mb3, .lh-title;
 }
 
 .cta {
-  color: var(--cmu-dark-gray);
+  color: var(--gt-dark-gray);
 
   @extend .ttu, .no-underline, .b;
 
@@ -101,8 +98,8 @@ h6 {
 
 main {
   a {
-    color: var(--cmu-red);
-    text-decoration-color: var(--pink);
+    color: var(--gt-blue);
+    text-decoration-color: var(--orange-red);
     @extend .link;
 
     &:hover,
@@ -113,8 +110,8 @@ main {
 }
 
 button {
-  border-bottom: 2px solid var(--cmu-dark-gray);
-  background-color: 2px solid var(--cmu-gray);
+  border-bottom: 2px solid var(--gt-dark-gray);
+  background-color: 2px solid var(--gt-gray);
   padding: 0.2rem 0.6rem;
 }
 
@@ -122,11 +119,11 @@ button {
   // https://www.gradient-animator.com/
   background: linear-gradient(
     280deg,
-    var(--cmu-teal),
-    var(--cmu-green),
-    var(--cmu-blue),
-    var(--cmu-gold),
-    var(--cmu-red)
+    var(--gt-teal),
+    var(--gt-blue),
+    var(--gt-blue),
+    var(--gt-gold),
+    var(--gt-blue)
   );
   background-size: 800% 800%;
   animation: move 30s ease infinite;
@@ -156,11 +153,11 @@ button {
 }
 
 footer {
-  background-image: url(assets/bg-seal.png);
   background-repeat: no-repeat;
   background-position-x: 10px;
   background-position-y: 10px;
   background-size: 500px;
+  background-color: var(--gt-blue);
 }
 
 body {
