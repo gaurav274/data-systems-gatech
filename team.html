@@ -38,6 +38,7 @@ roles:
               {% assign stripped_person_content = person.fun_fact | strip %}
               <span{% if stripped_person_content != "" %} title="Fun fact: {{ stripped_person_content }}"{% endif %}>
                   <img src="{{ person.image | relative_url }}" alt="Picture of {{ person.name }}" loading="lazy" class="br3" />
+                <br>
                 <span class="black">
                   {{ person.name }}
                 </span>
@@ -46,10 +47,10 @@ roles:
               {% if person.advisors %}
               <!-- check if advisors exist -->
               <br>
-              Advised by:
+              Advisors:
                 <!-- loop through advisors -->
                 {% for advisor in person.advisors %}
-                  <div class="black"> - {{ advisor }}</div>
+                  <div class="black">{{ advisor }}</div>
                 {% endfor %}
               {% endif %}
             </div>

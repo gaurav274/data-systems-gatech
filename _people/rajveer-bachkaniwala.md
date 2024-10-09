@@ -5,5 +5,4 @@ image: https://www.rajveerbachkaniwala.com/assets/images/rajveer-headshot-gt-sys
 role: PhD Student
 advisors:
     - Prof. Kexin Rong
-    - Prof. Ada Gavrilovska
 ---
