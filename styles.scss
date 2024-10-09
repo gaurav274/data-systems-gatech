@@ -41,6 +41,12 @@ body {
   --text-color: #000;
 }
 
+a.gold-link {
+  color: var(--gt-gold);
+  font-size: large;
+  font-weight: bold;
+}
+
 .gt-blue {
   color: var(--gt-blue);
 }
