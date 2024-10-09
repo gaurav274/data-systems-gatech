@@ -114,6 +114,14 @@
           var text = document.createElement("span");
           text.innerText = bucket.key;
           text.setAttribute("title", bucket.key);
+          // if id is authors
+          if (id === "authors") {
+            text.setAttribute("class", "gt-gold-color");
+          }
+
+          if (id === "venue_tags") {
+            text.setAttribute("class", "gt-blue-color");
+          }
           var number = document.createElement("span");
           number.classList.add("gray", "f6");
           number.innerText = " (" + bucket.doc_count + ")";
