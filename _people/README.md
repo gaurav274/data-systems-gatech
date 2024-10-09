@@ -10,9 +10,8 @@ image: /assets/people/....jpg
 role: PhD Student
 advisors:
     - AdvisorFirstName AdvisorLastName
+fun_fact: "" # This will show on the Team page if photo is hovered on
 ---
-
-Fun fact.
 ```
 
 ## Note: The name on paper and the `name` in the key above should match to be listed in `publications.html`
