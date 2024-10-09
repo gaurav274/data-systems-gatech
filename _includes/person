@@ -1,3 +1,17 @@
-{% assign data = site.people | where:"name", include.name | first %}{% if
-data.website %}<a href="{{ data.website }}" class="gt-gold-link">{{ include.name }}</a
->{% else %}{{ include.name }}{% endif %}
+{%- assign data = site.people | where:"name", include.name | first -%}
+{%- if data == nil -%}
+  {%- for person in site.people -%}
+    {%- if person.other_names contains include.name -%}
+      {%- assign data = person -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- if data -%}
+  {%- if data.website -%}
+    <a href="{{ data.website }}" class="gt-gold-link">{{ include.name }}</a>
+  {%- else -%}
+    {{ include.name }}
+  {%- endif %}
+{%- else -%}
+  {{ include.name }}
+{%- endif -%}
