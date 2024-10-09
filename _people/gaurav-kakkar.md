@@ -6,5 +6,3 @@ role: PhD Student
 advisors:
     - Prof. Joy Arulraj
 ---
-
-
