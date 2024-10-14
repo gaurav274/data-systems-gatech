@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About DSA group @ GT
+title: About DSA group @ Georgia Tech
 subtitle: Learn more about the Data Systems and Analytics Group (DSA) at the Georgia Institute of Technology.
 description: Learn more about the Data Systems and Analytics Group (DSA) at the Georgia Institute of Technology.
 ---
