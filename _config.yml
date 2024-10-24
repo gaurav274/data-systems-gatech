@@ -11,6 +11,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dig.cmu.edu" # TODO for us GT folks the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: # none yet
 github_username: georgia-tech-db
+reading_grp_url: https://github.com/georgia-tech-db/dsa-reading-group/wiki/Data-Systems-and-Analytics-(DSA)-group
+github_url: "https://github.com/georgia-tech-db/"
 
 sass:
   style: compressed
