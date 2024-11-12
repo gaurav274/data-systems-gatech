@@ -20,7 +20,17 @@ def write_to_file(name, bibentry: dict):
     
     pdf = bibentry['url']
     title = bibentry['title']
-    venue_tag = bibentry['venue_tag']
+    
+    keep_venues = ['ICLR', 'CIDR', 'CACM', 'ACM', 'CIKM', 'VLDB', 'KDD', 'AISTATS', 'DEEM', 'BIGDATACONF',  'ICML', 'TKDE', 'EMNLP', 'ICDE', 'TKDD', 'SIGMOD', 'AAAI', 'NIPS',]
+    
+    def venue_transform(venue_tag):
+        if venue_tag == "PVLDB":
+            return "VLDB"
+        elif venue_tag == "NIPS":
+            return "NeurIPS"
+        return venue_tag
+    
+    venue_tag = venue_transform(bibentry['venue_tag'])
     venue = venue_tag
     ignore = ["2000-journals-tkde-LiuPT00",
         "2009-journals-kais-ChenL09",
@@ -36,6 +46,9 @@ def write_to_file(name, bibentry: dict):
     #     return
     
     if "CORR" in venue:
+        return
+    
+    if venue not in keep_venues:
         return
     
     if "Editor's Notes" in title:
@@ -58,7 +71,7 @@ def write_to_file(name, bibentry: dict):
     title = remove_special_characters(title)    
     
     
-    f = open(f'ymls_generated/{year}-{key}.html', 'w')
+    f = open(f'ymls_generated/{year}-{key}.md', 'w')
     f.write(f'---\n')
     f.write(f'layout: publication\n')
     # write the year
