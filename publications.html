@@ -14,10 +14,10 @@ description: Recent publications from the Data Systems and Analytics Group.
     <strong>Author</strong>
     <ul class="list pl0 lh-title"></ul>
   </div>
-  <div class="facet mr3" id="tags">
+  <!-- <div class="facet mr3" id="tags">
     <strong>Tag</strong>
     <ul class="list pl0 lh-title"></ul>
-  </div>
+  </div> -->
   <div class="facet mr3" id="type">
     <strong>Type</strong>
     <ul class="list pl0 lh-title"></ul>
@@ -44,8 +44,8 @@ description: Recent publications from the Data Systems and Analytics Group.
   <h2 class="year f2" id="y{{ year.name }}" class="year">{{ year.name }}</h2>
   {% for pub in year.items %}
   {% capture anchor %}{% if pub.id %}{{ pub.id }}{% else %}{{ pub.title | slugify }}{% endif %}{% endcapture %}
-
-  <div class="publication flex mt4" data-pub='{{ pub | jsonify | escape }}'>
+  {% capture pub_data %}{"year": {{ pub.year }},"type": "{{ pub.type }}","title": "{{ pub.title }}","authors": {{ pub.authors | jsonify }},"venue_tags": "{{ pub.venue_tags }}","venue": "{{ pub.venue }}"}{% endcapture %}
+  <div class="publication flex mt4" data-pub='{{ pub_data | jsonify | escape }}'>
 
     {% if pub.thumbnail_image %}
       <div class="h3 mr4 flex-shrink-0 preview-image dn db-ns "

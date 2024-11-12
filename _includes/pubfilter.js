@@ -18,11 +18,35 @@
     });
   }
 
+  // if authors have other names keep only the person's name
+  function keepOnlyPrimaryName(names) {
+
+    return names.map(name => {
+      const person = people.find(person => (person.name === name || ("other_names" in person && person.other_names.includes(name)))); 
+
+      if (person === undefined) {
+        return;
+      }
+
+      if (person.role.toLowerCase() !== "professor") {
+        return;
+      }
+
+      return person.name;
+    });
+  }
+
+  function cleanAuthorNames(authors) {
+    authors = removeAsteriskFromNames(authors);
+    authors = keepOnlyPrimaryName(authors);
+    return authors;
+  }
+
   pubElems.forEach(function(element) {
-    var item = JSON.parse(element.getAttribute("data-pub"));
+    var item = JSON.parse(JSON.parse(element.getAttribute("data-pub")));
 
     // clean author names 
-    item.authors = removeAsteriskFromNames(item.authors);
+    item.authors = cleanAuthorNames(item.authors);
     
     allYears.add(item.year);
 
@@ -37,7 +61,8 @@
         size: 5
       },
       authors: {
-        size: 6
+        // make it length of people who are professors
+        size: people.filter(person => person.role.toLowerCase() === "professor").length + 1
       },
       awards: {
         size: 5
@@ -47,9 +72,12 @@
       },
       type: {
         size: 5
+      },
+      venue: {
+        size: 10
       }
     },
-    searchableFields: ["authors", "awards", "tags", "type", "title", "content"]
+    searchableFields: ["authors", "awards", "type", "title", "venue", "venue_tags"],
   });
 
   // get default search from URL
@@ -99,7 +127,8 @@
           // given the name of the author, check if the author is a professor in the people array
           // if not then don't show the author
           if (id === "authors") {
-            if (people.find(person => person.name === bucket.key) === undefined) {
+            // people.map(person => console.log(person.other_names));
+            if (people.find(person => (person.name === bucket.key || ("other_names" in person && person.other_names.includes(bucket.key)))) === undefined) {
               console.log("Author not found: " + bucket.key);
               return;
             }
@@ -119,24 +148,34 @@
             text.setAttribute("class", "gt-gold-color");
           }
 
+          wrap.appendChild(text);
+
           if (id === "venue_tags") {
             text.setAttribute("class", "gt-blue-color");
+            var number = document.createElement("span");
+            number.classList.add("gray", "f6");
+            number.innerText = " (" + bucket.doc_count + ")";
+            wrap.appendChild(number);
+  
+            var barFull = document.createElement("div");
+            barFull.classList.add("w-100", "bb", "b--black-20", "bw1", "mt1");
+            child.append(barFull);
+  
+            var bar = document.createElement("div");
+            bar.classList.add("bb", "b--gt-blue", "bw1");
+            bar.style.marginBottom = "-.125rem";
+            bar.style.width = "" + (bucket.doc_count / maxDocCount) * 100 + "%";
+            barFull.append(bar);
           }
-          var number = document.createElement("span");
-          number.classList.add("gray", "f6");
-          number.innerText = " (" + bucket.doc_count + ")";
-          wrap.appendChild(text);
-          wrap.appendChild(number);
 
-          var barFull = document.createElement("div");
-          barFull.classList.add("w-100", "bb", "b--black-20", "bw1", "mt1");
-          child.append(barFull);
-
-          var bar = document.createElement("div");
-          bar.classList.add("bb", "b--gt-blue", "bw1");
-          bar.style.marginBottom = "-.125rem";
-          bar.style.width = "" + (bucket.doc_count / maxDocCount) * 100 + "%";
-          barFull.append(bar);
+          if (id === "type") {
+            text.setAttribute("class", "gt-blue-color");
+            var number = document.createElement("span");
+            number.classList.add("gray", "f6");
+            number.innerText = " (" + bucket.doc_count + ")";
+            wrap.appendChild(number);
+          }
+         
 
           if (bucket.in_query) {
             child.classList.add("b");
